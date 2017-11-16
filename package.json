@@ -1,0 +1,11 @@
+{
+  "name": "projectscmdr",
+  "version": "1.0.0",
+  "description": "ProjectsCmdr",
+  "main": "index.js",
+  "author": "Nazim Lachter <me@nlachter.fr>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^2.11.0"
+  }
+}
