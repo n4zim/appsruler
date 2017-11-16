@@ -1,9 +1,9 @@
 {
-  "name": "projectscmdr",
-  "version": "1.0.0",
-  "description": "ProjectsCmdr",
+  "name": "appsruler",
+  "version": "0.1.0",
+  "description": "AppsRuler",
   "main": "index.js",
-  "author": "Nazim Lachter <me@nlachter.fr>",
+  "author": "Nazim Lachter <nlachter@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
     "blessed": "^0.1.81",
