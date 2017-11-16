@@ -6,6 +6,8 @@
   "author": "Nazim Lachter <me@nlachter.fr>",
   "license": "Apache-2.0",
   "dependencies": {
+    "blessed": "^0.1.81",
+    "chalk": "^2.3.0",
     "commander": "^2.11.0"
   }
 }

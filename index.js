@@ -1,11 +1,59 @@
-#!/usr/bin/env node
+var blessed = require('blessed');
 
-var program = require('commander');
+var screen = blessed.screen();
 
-program
-    .option('--no-sauce', 'Remove sauce')
-    .parse(process.argv);
+var list = blessed.list({
+    parent: screen,
+    width: '50%',
+    height: '50%',
+    top: 'center',
+    left: 'center',
+    align: 'center',
+    fg: 'blue',
+    border: {
+        type: 'line'
+    },
+    selectedBg: 'green',
 
-console.log('you ordered a pizza');
-if(program.sauce) console.log('  with sauce');
-else console.log(' without sauce');
+    // Allow mouse support
+    mouse: true,
+
+    // Allow key support (arrow keys + enter)
+    keys: true,
+
+    // Use vi built-in keys
+    vi: true
+});
+
+list.setItems([
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+    'ten'
+]);
+
+list.prepend(new blessed.Text({
+    left: 2,
+    content: ' My list '
+}));
+
+list.on('wheeldown', function() {
+  list.down();
+});
+
+list.on('wheelup', function() {
+  list.up();
+});
+
+// Select the first item.
+list.select(0);
+
+screen.key(['escape', 'q', 'C-c'], (ch, key) => process.exit(0));
+
+screen.render();
